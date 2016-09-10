@@ -1,4 +1,4 @@
-/* This Servlet comes in to action when admin comes into action. Here, the credentials entered by admin are verified with credentials of admin available in the database.*/
+/* This Servlet come in to action when admin access the admin link in HTML page . Here, the credentials entered by admin are verified with credentials of admin available in the database.*/
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
