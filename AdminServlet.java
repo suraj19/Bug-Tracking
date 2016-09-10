@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class UserServlet extends HttpServlet {
+public class AdminServlet extends HttpServlet {
 public static boolean validate(String name,String pass){
 boolean status=false;
 try{
@@ -40,30 +40,17 @@ try{
 		String n=request.getParameter("username");
 		String p=request.getParameter("password");
 		boolean status=true; //assuming login sucess.
-	/*try
-	{
-		PreparedStatement ps;
-		ps.setString(1,n);
-		ps.setString(2,p);
-		ResultSet rs = ps.executeQuery();
-		status=rs.next();
-		rs.close();
+	response.setContentType("text/html");
+	PrintWriter pw = response.getWriter();
+	out.println("<HTML>");
+	out.println("<BODY BG COLOR=GREEN>");
+	if(status)
+		out.println("<a href=Admin.html>");
+	else
+		out.println("<H2>Login Failed <A HREF=Index.html> try again</A></H2>");
+		out.println("</BODY>");
+		out.println("</HTML>");
+		out.close();
 	}
-	catch (Exception e)
-		{
-		System.out.println(e);
-		}*/
-		response.setContentType("text/html");
-		PrintWriter pw = response.getWriter();
-		out.println("<HTML>");
-		out.println("<BODY BG COLOR=GREEN>");
-		if(status)
-			out.println("<a href=User.html>");
-		else
-			out.println("<H2>Login Failed <A HREF=index.html> try again</A></H2>");
-			out.println("</BODY>");
-			out.println("</HTML>");
-			out.close();
-			}
-		}
+}
 	

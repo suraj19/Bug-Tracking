@@ -1,6 +1,8 @@
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.*;
 
 public class Register extends HttpServlet {
