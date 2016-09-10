@@ -40,19 +40,6 @@ try{
 		String n=request.getParameter("username");
 		String p=request.getParameter("password");
 		boolean status=true; //assuming login sucess.
-	/*try
-	{
-		PreparedStatement ps;
-		ps.setString(1,n);
-		ps.setString(2,p);
-		ResultSet rs = ps.executeQuery();
-		status=rs.next();
-		rs.close();
-	}
-	catch (Exception e)
-		{
-		System.out.println(e);
-		}*/
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		out.println("<HTML>");
