@@ -17,7 +17,7 @@ public static boolean validate(String name,String pass){
 boolean status=false;
 try{
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/suraj", "root","root");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/bug_tracker", "root","root");
 	
 	PreparedStatement ps=con.prepareStatement("select * from Registration where name=? and pass=?");
 	ps.setString(1,name);
