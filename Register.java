@@ -14,11 +14,11 @@ public class Register extends HttpServlet {
         PrintWriter out = response.getWriter();
 	
         String Fname = request.getParameter("Fname");
-	String Lname = request.getParameter("Lname");
+		String Lname = request.getParameter("Lname");
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
         String role = request.getParameter("role");
-	String MNo = request.getParameter("MNo");
+		int MNo = Integer.parseInt(request.getParameter("MNo"));
 		try{
         
         //loading drivers for mysql
@@ -26,17 +26,16 @@ public class Register extends HttpServlet {
 
 	//creating connection with the database 
           Connection  con=DriverManager.getConnection
-                     ("jdbc:mysql:/ /localhost:3306/test","username","password");
+                     ("jdbc:mysql:/ /localhost:3306/bug_tracker","root","root");
 
-        PreparedStatement ps=con.prepareStatement
-                  ("insert into Registration values(?,?,?,?,?,?)");
+        PreparedStatement ps=con.prepareStatement("insert into Registration values(?,?,?,?,?,?)");
 
         ps.setString(1, Fname);
 	ps.setString(2, Lname);
         ps.setString(3, email);
         ps.setString(4, pass);
 	ps.setString(5, role);
-	ps.setString(6, MNo);
+	ps.setInt(6, MNo);
         int i=ps.executeUpdate();
         
           if(i>0)
